@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ma.gov.pfe</groupId>
+    <groupId>ma.emsi.fatouh</groupId>
     <artifactId>tp4WebFatouh</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>tp4WebFatouh</name>
