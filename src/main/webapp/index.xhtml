@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>TP RAG Web – Fatouh</title>
+    <h:outputStylesheet name="css/app.css"/>
+</h:head>
+<h:body>
+    <h:form style="max-width:800px;margin:24px auto;font-family:system-ui">
+
+        <h2>TP RAG – Application Web (Jakarta EE / JSF)</h2>
+
+        <h:panelGrid columns="3" columnClasses="col,col,col" style="gap:16px;margin:12px 0;">
+            <h:selectBooleanCheckbox value="#{chatBean.multiPdf}"/><h:outputText value="Routage multi-PDF (Test 3)"/><h:outputText value=""/>
+            <h:selectBooleanCheckbox value="#{chatBean.guardNoRag}"/><h:outputText value="No-RAG guard (Test 4)"/><h:outputText value=""/>
+            <h:selectBooleanCheckbox value="#{chatBean.useWeb}"/><h:outputText value="Recherche Web Tavily (Test 5)"/><h:outputText value=""/>
+        </h:panelGrid>
+
+        <h:panelGroup style="display:flex;gap:8px;align-items:center;">
+            <h:inputText value="#{chatBean.userInput}" style="flex:1;padding:8px" placeholder="Posez une question..."/>
+            <h:commandButton value="Envoyer" action="#{chatBean.send}" style="padding:8px 14px"/>
+        </h:panelGroup>
+
+        <h:panelGroup layout="block" style="margin-top:24px;border:1px solid #ddd;padding:12px;border-radius:8px; background:#fafafa">
+            <h3>Conversation</h3>
+            <ui:repeat value="#{chatBean.history}" var="line" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+                <div style="margin:6px 0;">#{line}</div>
+            </ui:repeat>
+        </h:panelGroup>
+
+        <p style="margin-top:16px;color:#666">
+            PDFs utilisés (RAG) : <code>docs/rag.pdf</code>, <code>docs/ia2.pdf</code> — placez-les dans <code>src/main/resources/docs</code>.
+        </p>
+    </h:form>
+</h:body>
+</html>
